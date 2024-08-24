@@ -6,3 +6,8 @@ interface TCountryList {
 }
 
 type TFilterOptions = 'All' | 'Asia' | 'Europe';
+interface TUserCred {
+  userName: string;
+  password: string;
+  keepMeSignIn: boolean;
+}

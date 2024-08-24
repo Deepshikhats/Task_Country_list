@@ -13,6 +13,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   color: $primary-clr;
+  font-family: 'Noto Sans', sans-serif;
 
   h1 {
     font-weight: 700;
@@ -28,7 +29,7 @@ body {
   #root {
     height: 100%;
     width: 100%;
-    font-size: 14px;
+    overflow: auto;
     font-weight: 400;
   }
   ::-webkit-scrollbar {
@@ -71,9 +72,10 @@ body {
       margin-bottom: 29px;
       margin-top: 14px;
       font-weight: 700;
-      a {
+      .link {
         color: #587fff;
         text-decoration: none;
+        cursor: pointer;
       }
     }
     .form-check {
@@ -86,33 +88,28 @@ body {
       width: 32px;
       border: #000000 2px solid;
       border-radius: 0;
-      background: #f2f2f2;
+      box-shadow: none !important;
     }
   }
   .divider {
     flex: 1;
     border: #cfcfcf 2px solid;
   }
-  .socialLogin {
+}
+
+.nav-link {
+  height: 42px;
+  min-width: 42px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #8b8b8b;
+  cursor: pointer;
+  &_active {
+    color: $primary-clr;
+    border-bottom: 2px solid #3e3e3e;
   }
 }
-.header {
-  ul {
-    list-style-type: none;
-    .li {
-      height: 42px;
-      min-width: 42px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #8b8b8b;
-      cursor: pointer;
-      &_active {
-        color: $primary-clr;
-        border-bottom: 2px solid #3e3e3e;
-      }
-    }
-  }
-}
+
 .social {
   display: flex;
   gap: 16px;
@@ -132,9 +129,9 @@ body {
   padding-bottom: 32px;
   .welcomeBanner {
     gap: 30px;
+    margin-top: 57px;
     div {
       border: 3px solid #3d3d3d;
-      width: 3px;
       flex: 1;
     }
   }
@@ -149,12 +146,21 @@ body {
       box-shadow: 8px 8px 0px 0px #0000001a;
       padding: 18px 17px;
       gap: 28px;
-      flex: 1 1 calc(50% - 16px); // Takes 50% width minus the gap
+      flex: 1 1 calc(50% - 16px);
       max-width: calc(50% - 16px);
+      @media screen and (max-width: 992px) {
+        flex: 1 1 calc(50%);
+        max-width: calc(100%);
+      }
+
       img {
         height: 96px;
         width: 127px;
         object-fit: cover;
+        @media screen and (max-width: 992px) {
+          width: 48px;
+          height: 46px;
+        }
       }
       &_details {
         display: flex;
@@ -181,16 +187,28 @@ body {
   .carousal_container {
     display: flex;
     gap: 35px;
-    height: 498px;
     margin-top: 32px;
+    @media screen and (min-width: 992px) {
+      height: 498px;
+    }
+
     .carousal_img1 {
       width: 70%;
       height: 100%;
       position: relative;
+      background-color: #e9ecef;
+      @media screen and (max-width: 992px) {
+        height: 195px;
+        width: 100%;
+      }
     }
     .carousal_img2 {
-      flex: 1;
+      // flex: 1;
       height: 100%;
+      background-color: #e9ecef;
+      @media screen and (max-width: 992px) {
+        height: 147px;
+      }
     }
     img {
       width: 100%;

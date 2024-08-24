@@ -11,12 +11,16 @@ import getCountries from 'service';
 
 const Home = () => {
   const dispatch = useAppDispatch();
+
+  /*****************************HOOKS**************************************** */
   const [activeOption, setActiveOption] = useState<TFilterOptions>('All');
   const [loadMore, setLoadMore] = useState<boolean>(false);
 
   useEffect(() => {
     fetchCountries();
   }, []);
+
+  /***************************FUNCTIONS****************************************** */
 
   const fetchCountries = () => {
     getCountries().then((resp: TCountryList[]) =>
@@ -25,15 +29,16 @@ const Home = () => {
   };
 
   return (
-    <Container className="home h-100">
+    <Container className="home">
       <Header
         filterOptions={['All', 'Asia', 'Europe']}
         activeOption={activeOption}
         setActive={setActiveOption}
       />
-      <div className="d-flex welcomeBanner">
+
+      <div className="d-flex flex-column flex-lg-row welcomeBanner">
         <div className="mb-auto" />
-        <h1 className="">Welcome</h1>
+        <h1 className="text-center">Welcome</h1>
         <div className="mt-auto" />
       </div>
 
@@ -41,8 +46,8 @@ const Home = () => {
 
       <Countrylist loadMore={loadMore} activeOption={activeOption} />
       <div className="btn_wrapper">
-        <Button onClick={() => setLoadMore(true)} className="m-auto">
-          Load More
+        <Button onClick={() => setLoadMore((cv) => !cv)} className="m-auto">
+          {loadMore ? 'Load Less' : 'Load More'}
         </Button>
       </div>
       <footer className="">

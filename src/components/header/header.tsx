@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 interface HeaderProps {
   filterOptions: string[];
   activeOption: TFilterOptions;
@@ -11,21 +13,31 @@ const Header: React.FC<HeaderProps> = ({
   setActive,
 }) => {
   return (
-    <header className="header d-flex justify-content-between">
-      <h3>Countries</h3>
-      <ul className="d-flex gap-4 align-items-center">
-        {filterOptions.map((option: string, index: number) => (
-          <li
-            key={index}
-            className={`li ${activeOption === option && 'li_active'}`}
-            //@ts-ignore
-            onClick={() => setActive(option)}
-          >
-            {option}
-          </li>
-        ))}
-      </ul>
-    </header>
+    <>
+      <Navbar expand="lg">
+        <Container>
+          <Navbar.Brand href="/home">
+            <h3>Countries</h3>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {filterOptions.map((option: string, index: number) => (
+                //@ts-ignore
+                <Nav.Link
+                  href="#home"
+                  key={index}
+                  onClick={() => setActive(option)}
+                  className={`${activeOption === option && 'nav-link_active'}`}
+                >
+                  {option}
+                </Nav.Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 

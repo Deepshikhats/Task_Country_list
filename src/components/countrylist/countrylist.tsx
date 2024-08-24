@@ -1,5 +1,5 @@
 import { useAppSelector } from '@/hooks/index';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const Countrylist: React.FC<{
@@ -9,6 +9,14 @@ const Countrylist: React.FC<{
   const { countryList, asiaList, europeList } = useAppSelector(
     (state) => state.countryListSlice
   );
+
+  /***************************FUNCTIONS****************************************** */
+
+  /**
+   * @function iterator
+   * @description Based on the filter, iterator list is updated with respective countries
+   * @returns
+   */
   const iterator = () => {
     if (activeOption === 'All') return countryList;
     else if (activeOption === 'Asia') return asiaList;

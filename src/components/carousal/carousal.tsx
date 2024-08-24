@@ -50,7 +50,7 @@ const Carousel = () => {
   }, [_images.length]);
 
   return (
-    <section className="carousal_container">
+    <section className="carousal_container flex-column-reverse flex-lg-row ">
       <div className="carousal_img1 relative">
         <img src={_images[imageIndex]} alt="img1" />
         <div className="carousal_indicators">
@@ -78,7 +78,7 @@ const Carousel = () => {
           </button>
         </div>
       </div>
-      <div className="carousal_img2">
+      <div className="carousal_img2 flex-lg-grow-1">
         <img
           src={
             imageIndex === _images.length - 1
