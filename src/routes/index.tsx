@@ -11,12 +11,13 @@ const Home = lazy(() => import('@/pages/home'));
 const Router = createBrowserRouter([
   {
     element: <Layout />,
-    ErrorBoundary: () => <div>Loading</div>,
+    ErrorBoundary: () => <div>Loading...</div>,
     children: [
       {
         element: <PublicRoute />,
         children: [
           {
+            index: true,
             path: PATH.auth,
             element: <Auth />,
           },
