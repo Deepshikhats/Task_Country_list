@@ -1,0 +1,241 @@
+$primary-clr: #3d3d3d;
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+  -moz-osx-font-smoothing: grayscale; /* Improve text rendering on macOS */
+  scroll-behavior: smooth;
+  background: #fff;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  color: $primary-clr;
+
+  h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+  }
+
+  #root {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  ::-webkit-scrollbar {
+    background: transparent;
+    width: 4px !important;
+    height: 4px !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(54, 54, 54, 0.25);
+    width: 1px !important;
+    border-radius: 30px !important;
+  }
+}
+
+.inputBox {
+  border-radius: 0;
+  width: 280px;
+  padding: 2px;
+  height: 48px;
+  border: #3e3e3e 2px solid !important;
+  box-shadow: none !important;
+}
+.Btn1 {
+  color: #fcfcfc;
+  background-color: #3c3c3c !important;
+  height: 48px;
+  text-align: center;
+  border-radius: 0;
+  border: none;
+}
+.authBox {
+  width: 280px;
+  &_form {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 32px;
+
+    .newUser {
+      margin-bottom: 29px;
+      margin-top: 14px;
+      font-weight: 700;
+      a {
+        color: #587fff;
+        text-decoration: none;
+      }
+    }
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    input[type='checkbox'] {
+      height: 32px;
+      width: 32px;
+      border: #000000 2px solid;
+      border-radius: 0;
+      background: #f2f2f2;
+    }
+  }
+  .divider {
+    flex: 1;
+    border: #cfcfcf 2px solid;
+  }
+  .socialLogin {
+  }
+}
+.header {
+  ul {
+    list-style-type: none;
+    .li {
+      height: 42px;
+      min-width: 42px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #8b8b8b;
+      cursor: pointer;
+      &_active {
+        color: $primary-clr;
+        border-bottom: 2px solid #3e3e3e;
+      }
+    }
+  }
+}
+.social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  .icon_wrapper {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #3e3e3e;
+    border-radius: 50%;
+  }
+}
+.home {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .welcomeBanner {
+    gap: 30px;
+    div {
+      border: 3px solid #3d3d3d;
+      width: 3px;
+      flex: 1;
+    }
+  }
+
+  .country {
+    &_container {
+      margin: 32px 0;
+      gap: 16px;
+    }
+    &_Box {
+      border: 2px solid #3e3e3e;
+      box-shadow: 8px 8px 0px 0px #0000001a;
+      padding: 18px 17px;
+      gap: 28px;
+      flex: 1 1 calc(50% - 16px); // Takes 50% width minus the gap
+      max-width: calc(50% - 16px);
+      img {
+        height: 96px;
+        width: 127px;
+        object-fit: cover;
+      }
+      &_details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        > span {
+          font-size: 16px;
+        }
+        > h5 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .btn_wrapper {
+    margin-bottom: 112px;
+    display: flex;
+    > button {
+      margin: auto;
+    }
+  }
+  .carousal_container {
+    display: flex;
+    gap: 35px;
+    height: 498px;
+    margin-top: 32px;
+    .carousal_img1 {
+      width: 70%;
+      height: 100%;
+      position: relative;
+    }
+    .carousal_img2 {
+      flex: 1;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .carousal_indicators {
+      display: flex;
+      bottom: 16px;
+      position: absolute;
+      padding: 4px;
+      gap: 5px;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      .carousal_dots {
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        background: white;
+        display: block;
+        &_active {
+          background: black;
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer_info {
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      a {
+        color: $primary-clr !important;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/*******************************UTILITY-CLASSES*****************************************************/
