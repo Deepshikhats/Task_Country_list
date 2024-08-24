@@ -11,6 +11,7 @@ const Home = lazy(() => import('@/pages/home'));
 const Router = createBrowserRouter([
   {
     element: <PublicRoute />,
+    path: '/',
     children: [
       {
         element: <Layout />,

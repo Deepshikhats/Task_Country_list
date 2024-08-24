@@ -1,6 +1,6 @@
 const PATH = {
   auth: '/auth',
-  home: '/',
+  home: '/home',
 };
 
 export default PATH;
