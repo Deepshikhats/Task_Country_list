@@ -10,10 +10,10 @@ const Home = lazy(() => import('@/pages/home'));
 
 const Router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <PublicRoute />,
     children: [
       {
-        element: <PublicRoute />,
+        element: <Layout />,
         children: [
           {
             path: PATH.auth,
