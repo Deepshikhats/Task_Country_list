@@ -3,8 +3,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import PrivateRoute from './privateRoutes.tsx/index.tsx';
 import PublicRoute from './publicRoutes/index.tsx';
 import PATH from './routePaths';
+import Auth from '@/pages/auth';
 
-const Auth = lazy(() => import('@/pages/auth'));
 const Home = lazy(() => import('@/pages/home'));
 
 const Router = createBrowserRouter([
