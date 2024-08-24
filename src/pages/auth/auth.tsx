@@ -40,7 +40,7 @@ const Auth = () => {
           keepMeSignIn: false,
         }}
       >
-        {({ handleSubmit, handleChange, values, errors }) => (
+        {({ handleSubmit, handleChange, resetForm, values, errors }) => (
           <Form noValidate onSubmit={handleSubmit} className="authBox_form">
             <Row>
               <h1>{isLogin ? 'Sign In' : 'Sign Up'}</h1>
@@ -48,7 +48,13 @@ const Auth = () => {
             <Row className="newUser">
               <span>
                 {isLogin ? 'New User? ' : 'Existing User? '}
-                <span className="link" onClick={() => setIsLogin((cv) => !cv)}>
+                <span
+                  className="link"
+                  onClick={() => {
+                    setIsLogin((cv) => !cv);
+                    resetForm();
+                  }}
+                >
                   {isLogin ? 'Create an account' : 'Login In'}
                 </span>
               </span>

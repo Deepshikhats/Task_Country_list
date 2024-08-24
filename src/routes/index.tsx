@@ -4,9 +4,9 @@ import PublicRoute from './publicRoutes/index.tsx';
 import PATH from './routePaths';
 import Layout from '@/components/layout/layout.tsx';
 import PrivateRoute from './privateRoutes.tsx/index.tsx';
-import Home from '@/pages/home/home.tsx';
 
 const Auth = lazy(() => import('@/pages/auth'));
+const Home = lazy(() => import('@/pages/home'));
 
 const Router = createBrowserRouter([
   {
