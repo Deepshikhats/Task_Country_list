@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 interface HeaderProps {
-  filterOptions: string[];
+  filterOptions: TFilterOptions[];
   activeOption: TFilterOptions;
   setActive: React.Dispatch<React.SetStateAction<TFilterOptions>>;
 }
@@ -23,10 +23,10 @@ const Header: React.FC<HeaderProps> = ({
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {filterOptions.map((option: string, index: number) => (
-                //@ts-ignore
                 <Nav.Link
                   href="#home"
                   key={index}
+                  //@ts-ignore
                   onClick={() => setActive(option)}
                   className={`${activeOption === option && 'nav-link_active'}`}
                 >

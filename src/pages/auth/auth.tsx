@@ -40,7 +40,7 @@ const Auth = () => {
           keepMeSignIn: false,
         }}
       >
-        {({ handleSubmit, handleChange, values, touched, errors }) => (
+        {({ handleSubmit, handleChange, values, errors }) => (
           <Form noValidate onSubmit={handleSubmit} className="authBox_form">
             <Row>
               <h1>{isLogin ? 'Sign In' : 'Sign Up'}</h1>
